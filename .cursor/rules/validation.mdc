@@ -1,0 +1,12 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+ # Error Prevention
+
+## Validation Rules
+1. Verify type consistency
+2. Check for potential null/undefined
+3. Validate against business rules
+4. Ensure error handling

@@ -1,0 +1,15 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+ # File Management Rules
+
+## Required Actions After Code Changes
+1. READ docs/architecture.mermaid to verify architectural compliance
+2. UPDATE docs/status.md with:
+   - Current progress
+   - Any new issues encountered
+   - Completed items
+3. VALIDATE changes against docs/technical.md specifications
+4. VERIFY task progress against tasks/tasks.md

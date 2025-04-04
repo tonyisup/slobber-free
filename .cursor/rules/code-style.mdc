@@ -1,0 +1,12 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+ # Code Style and Patterns
+
+## TypeScript Guidelines
+- Use strict typing, avoid 'any'
+- Follow SOLID principles
+- Write unit tests for all public methods
+- Document with JSDoc
