@@ -1,7 +1,7 @@
 "use client"
 
 import { Download, Loader2 } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useTheme } from "next-themes"
 import PaymentSection from "./payment-section"
 
@@ -14,7 +14,13 @@ interface ImageComparisonProps {
 export default function ImageComparison({ originalImage, processedImage, isProcessing }: ImageComparisonProps) {
   const [downloadReady, setDownloadReady] = useState(false)
   const [paymentComplete, setPaymentComplete] = useState(false)
-  const { theme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+  const { resolvedTheme } = useTheme()
+
+  // After mounting, we can safely show the UI
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const handleDownload = () => {
     if (processedImage) {
@@ -36,7 +42,7 @@ export default function ImageComparison({ originalImage, processedImage, isProce
           <div className="flex-1 flex flex-col items-center justify-center p-6 text-center">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img 
-              src={theme === 'dark' ? "/placeholder-dark.svg" : "/placeholder.svg"} 
+              src={mounted && resolvedTheme === 'dark' ? "/placeholder-dark.svg" : "/placeholder.svg"} 
               alt="Placeholder dog" 
               className="mb-4 rounded-md" 
             />
@@ -49,7 +55,7 @@ export default function ImageComparison({ originalImage, processedImage, isProce
               <div className="relative h-[200px] bg-gray-100 rounded-md overflow-hidden">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={originalImage || "/placeholder-dark.svg"}
+                  src={originalImage || (mounted && resolvedTheme === 'dark' ? "/placeholder-dark.svg" : "/placeholder.svg")}
                   alt="Original dog"
                   className="w-full h-full object-contain"
                 />
@@ -69,7 +75,7 @@ export default function ImageComparison({ originalImage, processedImage, isProce
                 ) : processedImage ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img
-                    src={processedImage || "/placeholder-dark.svg"}
+                    src={processedImage || (mounted && resolvedTheme === 'dark' ? "/placeholder-dark.svg" : "/placeholder.svg")}
                     alt="Processed dog"
                     className="w-full h-full object-contain"
                     onLoad={() => setDownloadReady(true)}
