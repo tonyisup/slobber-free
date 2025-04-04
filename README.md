@@ -6,6 +6,7 @@ SlobberFree Paws is a web application that utilizes AI to automatically remove s
 
 ## Technology Stack
 
+*   **Authentication:** Clerk (handles user signup, signin, and management)
 *   **Front-end:** Next.js (React framework)
 *   **Back-end:** Next.js API routes (Node.js serverless functions)
 *   **API Communication:** tRPC (type-safe API layer)
@@ -40,6 +41,7 @@ SlobberFree Paws is a web application that utilizes AI to automatically remove s
         OPENAI_API_KEY="[your OpenAI API key]"
         STRIPE_SECRET_KEY="[your Stripe secret key]"
         STRIPE_PUBLISHABLE_KEY="[your Stripe publishable key]"
+        CLERK_SECRET_KEY="[Your Clerk Secret Key]"
         NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY="[your Stripe publishable key]" # For client-side
         VERCEL_API_TOKEN="[your Vercel API token]" # If using Vercel's billing API
         ```

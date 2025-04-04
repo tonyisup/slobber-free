@@ -2,7 +2,8 @@
 
 ## Current Tasks
 
-*   [ ] **Database Schema Design:** Define the database schema for storing transaction data, cost/usage information, and (optionally) user data.
+*   [ ] **Database Schema Design:** Define the database schema for storing transaction data, cost/usage information.
+*   [ ] **Clerk Integration:** Integrate the Clerk SDK into your Next.js application, set up authentication routes, and configure middleware.
 *   [ ] **Stripe Integration:** Implement the Stripe payment processing API routes.
 *   [ ] **OpenAI Integration:**
     *   Implement the image processing logic using the OpenAI API.

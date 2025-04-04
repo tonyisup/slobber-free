@@ -10,6 +10,7 @@ This document describes the system architecture of the SlobberFree Paws web appl
 graph LR
     A[User] --> B(Front-End: Next.js);
     B --> C{API Routes: Next.js (Serverless Functions)};
+    B --> H(Clerk Authentication);
     C --> D[OpenAI API];
     C --> E[Stripe API];
     C --> F[Database (PostgreSQL, MongoDB, etc.)];

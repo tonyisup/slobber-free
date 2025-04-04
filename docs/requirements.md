@@ -31,8 +31,8 @@
     *   The page displays total contributions received.
     *   The page calculates and displays the net balance (contributions - costs).
     *   Visualizations (charts) are used to represent cost and contribution trends.
-*   **3.4 User Authentication (Optional - Future Enhancement)**
-    *   Users can create accounts to track their usage and payment history (potentially for subscription tiers later).
+*   **3.4 User Authentication**
+    *   Users can create accounts and track their usage and payment history using Clerk.
 
 **4. Functional Requirements**
 
